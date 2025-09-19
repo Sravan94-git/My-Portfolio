@@ -1,0 +1,125 @@
+/* global.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --text-color-muted: #444444;
+  --card-bg-color: #f5f5f5;
+  --card-border-color: #e0e0e0;
+  --button-bg-color: #000000;
+  --button-text-color: #ffffff;
+  --divider-color: #e0e0e0;
+  --gradient-start: #00dbde;
+  --gradient-end: #fc00ff;
+}
+
+body.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --text-color-muted: #aaaaaa;
+  --card-bg-color: #111111;
+  --card-border-color: #333333;
+  --button-bg-color: #ffffff;
+  --button-text-color: #000000;
+  --divider-color: #333333;
+  --gradient-start: #00dbde;
+  --gradient-end: #fc00ff;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-color-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Make sure all sections fit properly */
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Lucide icon colors */
+.lucide {
+  color: var(--text-color);
+}
+
+/* Ensure sections take full viewport height */
+section {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Fix for mobile viewport height */
+@media (max-width: 768px) {
+  section {
+    min-height: 100vh;
+    height: auto;
+  }
+}
